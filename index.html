@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="lemonade" id="html-tag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCK - TOP SECRET</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee { animation: marquee 10s linear infinite; }
+    </style>
+</head>
+<body class="h-screen overflow-hidden">
+
+<!-- TOP MARQUEE CHAOS -->
+<div class="bg-error text-error-content py-1 overflow-hidden whitespace-nowrap font-bold border-b-2 border-black">
+    <div class="animate-marquee inline-block text-xl">
+        ⚠️ BRAIN NOT FOUND — NIKOLAS IS STUPID — STOP VISITING THIS SITE — YOUR BROWSER IS INFECTED WITH DUMBASS VIRUS — ⚠️
+    </div>
+</div>
+
+<div class="h-full flex flex-col items-center justify-center gap-6 bg-base-300">
+
+    <!-- COUNTDOWN OF DOOM -->
+    <div class="flex gap-5">
+        <div>
+                <span class="countdown font-mono text-4xl text-primary">
+                    <span id="counter" style="--value:69;"></span>
+                </span>
+            hours until delete C:\Windows
+        </div>
+    </div>
+
+    <!-- MAIN BUTTON -->
+    <button class="btn btn-secondary btn-outline hover:btn-error w-80 h-32 text-2xl shadow-2xl animate-bounce" onclick="my_modal_1.showModal()">
+        CLICK HERE IF YOUR NAME STARTS WITH A STUPID N (I ADVISE YOU NOT TO CLICK LMAO)
+    </button>
+
+    <!-- STATS DEBILES -->
+    <div class="stats shadow bg-base-100 border-2 border-primary">
+        <div class="stat">
+            <div class="stat-title">Stupidity Level</div>
+            <div class="stat-value text-primary">99.9%</div>
+            <div class="stat-desc">↗︎ 400 (every hour)</div>
+        </div>
+        <div class="stat">
+            <div class="stat-title">Brain Cells Left</div>
+            <div class="stat-value text-secondary">0</div>
+            <div class="stat-desc">Shocking...</div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<dialog id="my_modal_1" class="modal">
+    <div class="modal-box p-0 max-w-4xl border-4 border-error">
+        <div class="card lg:card-side bg-base-100 shadow-sm">
+            <figure class="w-full lg:w-1/2">
+                <img
+                    src="https://static.wikia.nocookie.net/tokiohotel/images/8/89/Bill-kaulitz-881550.jpeg/revision/latest?cb=20110209140711&path-prefix=en"
+                    alt="Bill"
+                    class="h-full object-cover"/>
+            </figure>
+            <div class="card-body lg:w-1/2">
+                <div class="badge badge-error animate-pulse">URGENT MESSAGE</div>
+                <h2 class="card-title text-3xl font-black text-error">HEY SUP, I'M BILL KAULITZ!</h2>
+                <p class="text-lg">I suck big ones, and my music is so bad it's a war crime.</p>
+
+                <div role="alert" class="alert alert-warning shadow-sm my-4">
+                    <svg xmlns="http://w3.org" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    <span>Warning: Your friend's IQ is dropping!</span>
+                </div>
+
+                <p class="italic text-sm opacity-70">"I love sucking big juicy glizzy" - Probably Bill</p>
+
+                <div class="card-actions justify-end mt-4">
+                    <!-- THE TROLL BUTTON -->
+                    <button
+                        id="runaway-btn"
+                        class="btn btn-error shadow-lg transition-all duration-75"
+                        onmouseover="moveButton(this)"
+                        onclick="alert('HOW DID YOU CLICK ME?!');">
+                        FUCK U (CLOSE)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<script>
+    // 1. Change les thèmes en boucle pour faire mal aux yeux
+    const themes = ["cyberpunk", "luxury", "aqua", "retro", "valentine", "coffee"];
+    const html = document.getElementById('html-tag');
+    setInterval(() => {
+        const randomTheme = themes[Math.floor(Math.random() * themes.length)];
+        html.setAttribute('data-theme', randomTheme);
+    }, 1000);
+
+    // 2. Fait fuir le bouton
+    function moveButton(btn) {
+        const x = Math.random() * (window.innerWidth - btn.clientWidth - 50);
+        const y = Math.random() * (window.innerHeight - btn.clientHeight - 50);
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    // 3. Fake Countdown
+    let count = 69;
+    setInterval(() => {
+        count--;
+        if(count < 0) count = 69;
+        document.getElementById('counter').style.setProperty('--value', count);
+    }, 1000);
+</script>
+</body>
+</html>
